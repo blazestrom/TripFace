@@ -1,0 +1,221 @@
+.app-shell {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background:
+    linear-gradient(180deg, rgba(29, 111, 143, 0.08), transparent 340px),
+    var(--bg);
+  color: var(--text);
+  transition: background 0.2s ease, color 0.2s ease;
+}
+
+.app-shell.theme-dark {
+  --bg: #0a0a0f;
+  --surface: #13131a;
+  --surface-soft: #1c1c27;
+  --surface-raised: #2a2a3a;
+  --text: #f0f0f8;
+  --muted: #a2a2bd;
+  --subtle: #7a7a9a;
+  --border: #2a2a3a;
+  --border-strong: #44445e;
+  --primary: #7c6dfa;
+  --primary-strong: #6b5bef;
+  --primary-soft: rgba(124, 109, 250, 0.16);
+  --accent: #fa6d9a;
+  --accent-soft: rgba(250, 109, 154, 0.14);
+  --success: #4ade80;
+  --success-soft: rgba(74, 222, 128, 0.13);
+  --warning: #facc15;
+  --warning-soft: rgba(250, 204, 21, 0.14);
+  --danger: #fb7185;
+  --danger-soft: rgba(251, 113, 133, 0.13);
+  --shadow: 0 18px 42px rgba(0, 0, 0, 0.36);
+  --shadow-sm: 0 8px 20px rgba(0, 0, 0, 0.28);
+  background:
+    radial-gradient(ellipse 80% 60% at 10% 0%, rgba(124, 109, 250, 0.14), transparent 60%),
+    radial-gradient(ellipse 60% 40% at 90% 100%, rgba(250, 109, 154, 0.1), transparent 60%),
+    var(--bg);
+}
+
+.app-header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2rem;
+  padding: 1rem clamp(1rem, 3vw, 2.5rem);
+  background: rgba(255, 255, 255, 0.88);
+  border-bottom: 1px solid var(--border);
+  backdrop-filter: blur(16px);
+}
+
+.theme-dark .app-header {
+  background: rgba(10, 10, 15, 0.78);
+}
+
+.brand-lockup {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  min-width: 190px;
+}
+
+.brand-mark {
+  width: 40px;
+  height: 40px;
+  border-radius: var(--radius);
+  display: grid;
+  place-items: center;
+  background: var(--text);
+  color: white;
+  font-size: 0.78rem;
+  font-weight: 800;
+  letter-spacing: 0.04em;
+  box-shadow: var(--shadow-sm);
+}
+
+.theme-dark .brand-mark {
+  background: linear-gradient(135deg, var(--primary), var(--accent));
+}
+
+.logo-text {
+  font-size: 1rem;
+  font-weight: 800;
+  line-height: 1.1;
+}
+
+.logo-sub {
+  color: var(--muted);
+  font-size: 0.75rem;
+  line-height: 1.2;
+}
+
+.stepper {
+  display: flex;
+  align-items: center;
+  gap: clamp(0.55rem, 2vw, 1.5rem);
+}
+
+.step-dot {
+  display: flex;
+  align-items: center;
+  gap: 0.45rem;
+  color: var(--subtle);
+  min-width: 0;
+}
+
+.dot-circle {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  border: 1px solid var(--border-strong);
+  display: grid;
+  place-items: center;
+  background: var(--surface);
+  color: var(--muted);
+  font-size: 0.75rem;
+  font-weight: 800;
+  flex: 0 0 auto;
+}
+
+.step-dot.active .dot-circle {
+  background: var(--primary);
+  border-color: var(--primary);
+  color: white;
+}
+
+.step-dot.done .dot-circle {
+  background: var(--success);
+  border-color: var(--success);
+  color: white;
+}
+
+.step-dot.active .dot-label,
+.step-dot.done .dot-label {
+  color: var(--text);
+}
+
+.dot-label {
+  font-size: 0.78rem;
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+.app-main {
+  flex: 1;
+  width: 100%;
+  padding: clamp(1rem, 4vw, 2.5rem);
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+}
+
+.theme-toggle {
+  min-height: 38px;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.55rem;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  background: var(--surface);
+  color: var(--text);
+  padding: 0.35rem 0.65rem;
+  font-size: 0.82rem;
+  font-weight: 800;
+  white-space: nowrap;
+}
+
+.theme-toggle:hover {
+  border-color: var(--border-strong);
+}
+
+.theme-toggle-track {
+  width: 36px;
+  height: 20px;
+  border-radius: 999px;
+  background: var(--surface-raised);
+  padding: 2px;
+  display: flex;
+  align-items: center;
+}
+
+.theme-toggle-thumb {
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background: var(--primary);
+  transition: transform 0.2s ease;
+}
+
+.theme-dark .theme-toggle-thumb {
+  transform: translateX(16px);
+  background: var(--accent);
+}
+
+@media (max-width: 720px) {
+  .app-header {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 0.9rem;
+  }
+
+  .theme-toggle {
+    position: absolute;
+    right: 1rem;
+    top: 1rem;
+  }
+
+  .stepper {
+    width: 100%;
+    justify-content: space-between;
+    overflow-x: auto;
+    padding-bottom: 0.2rem;
+  }
+
+  .dot-label {
+    display: none;
+  }
+}

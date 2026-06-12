@@ -1,0 +1,55 @@
+# Secrets
+.env
+backend/.env
+backend/credentials.json
+backend/token.json
+token.json
+*.secret.json
+
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+.Python
+.venv/
+venv/
+env/
+*.egg-info/
+dist/
+build/
+
+# Database and cache
+*.db
+*.sqlite
+*.sqlite3
+backend/.cache/
+
+# InsightFace model files
+.insightface/
+buffalo_l/
+
+# Frontend
+frontend/node_modules/
+frontend/dist/
+frontend/.env
+frontend/package-lock.json
+
+# Local server logs
+*-server.log
+*-server.err.log
+
+# Temporary files
+tmp/
+temp/
+*.tmp
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# IDE
+.vscode/
+.idea/
+*.swp
+desktop.ini

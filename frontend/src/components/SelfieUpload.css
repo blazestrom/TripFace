@@ -1,0 +1,357 @@
+.selfie-wrap {
+  width: min(100%, 720px);
+  animation: fadeUp 0.3s ease both;
+}
+
+.workflow-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  padding: clamp(1rem, 3vw, 1.5rem);
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.screen-heading {
+  display: grid;
+  gap: 0.35rem;
+  padding-bottom: 0.4rem;
+}
+
+.eyebrow {
+  color: var(--primary);
+  font-size: 0.72rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.screen-heading h1 {
+  font-size: clamp(1.6rem, 4vw, 2.15rem);
+  line-height: 1.08;
+  letter-spacing: 0;
+}
+
+.screen-heading p:last-child {
+  max-width: 58ch;
+  color: var(--muted);
+  font-size: 0.94rem;
+}
+
+.persons-list {
+  display: grid;
+  gap: 0.75rem;
+}
+
+.person-card {
+  background: var(--surface-soft);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 1rem;
+  display: grid;
+  gap: 0.85rem;
+}
+
+.person-card-header {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 0.75rem;
+  align-items: start;
+}
+
+.person-num {
+  display: block;
+  margin-bottom: 0.35rem;
+  color: var(--muted);
+  font-size: 0.72rem;
+  font-weight: 800;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.name-input {
+  width: 100%;
+  min-height: 42px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  color: var(--text);
+  padding: 0.65rem 0.75rem;
+  outline: none;
+}
+
+.name-input:focus {
+  border-color: var(--primary);
+  box-shadow: 0 0 0 3px var(--primary-soft);
+}
+
+.photo-options {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 0.6rem;
+}
+
+.photo-opt-btn {
+  min-height: 74px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  background: var(--surface);
+  color: var(--text);
+  display: grid;
+  place-items: center;
+  gap: 0.25rem;
+  font-weight: 700;
+}
+
+.photo-opt-btn:hover {
+  border-color: var(--primary);
+  background: var(--primary-soft);
+}
+
+.opt-icon {
+  color: var(--primary);
+  font-size: 0.7rem;
+  letter-spacing: 0.06em;
+}
+
+.photo-preview-row {
+  min-height: 74px;
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  gap: 0.85rem;
+  align-items: center;
+}
+
+.person-preview {
+  width: 64px;
+  height: 64px;
+  border-radius: var(--radius);
+  object-fit: cover;
+  border: 1px solid var(--border-strong);
+}
+
+.preview-meta {
+  display: grid;
+  gap: 0.1rem;
+  min-width: 0;
+}
+
+.preview-meta strong {
+  color: var(--success);
+  font-size: 0.92rem;
+}
+
+.preview-meta span {
+  color: var(--muted);
+  font-size: 0.82rem;
+}
+
+.btn-add-person {
+  min-height: 42px;
+  border: 1px dashed var(--border-strong);
+  border-radius: var(--radius-sm);
+  background: transparent;
+  color: var(--primary);
+  font-weight: 800;
+}
+
+.btn-add-person:hover {
+  background: var(--primary-soft);
+}
+
+.footer-actions {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 1rem;
+  align-items: center;
+  padding-top: 0.25rem;
+}
+
+.privacy-note {
+  color: var(--muted);
+  font-size: 0.82rem;
+}
+
+.btn-primary,
+.btn-secondary,
+.icon-button {
+  border-radius: var(--radius-sm);
+  min-height: 40px;
+  font-weight: 800;
+}
+
+.btn-primary {
+  border: 1px solid var(--primary);
+  background: var(--primary);
+  color: white;
+  padding: 0.65rem 1rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  white-space: nowrap;
+}
+
+.btn-primary:hover {
+  background: var(--primary-strong);
+  border-color: var(--primary-strong);
+}
+
+.btn-primary:disabled {
+  opacity: 0.48;
+}
+
+.btn-secondary {
+  border: 1px solid var(--border);
+  background: var(--surface);
+  color: var(--text);
+  padding: 0.55rem 0.85rem;
+}
+
+.btn-secondary:hover {
+  border-color: var(--border-strong);
+  background: var(--surface-soft);
+}
+
+.btn-secondary.compact {
+  min-height: 36px;
+  padding-inline: 0.7rem;
+}
+
+.icon-button {
+  width: 36px;
+  border: 1px solid var(--border);
+  background: var(--surface);
+  color: var(--muted);
+  font-size: 1.2rem;
+}
+
+.icon-button.danger:hover {
+  border-color: var(--danger);
+  color: var(--danger);
+  background: var(--danger-soft);
+}
+
+.error-box {
+  border: 1px solid #ffd0ca;
+  background: var(--danger-soft);
+  color: var(--danger);
+  border-radius: var(--radius-sm);
+  padding: 0.75rem 0.85rem;
+  font-size: 0.88rem;
+  font-weight: 700;
+}
+
+.spinner {
+  width: 14px;
+  height: 14px;
+  border: 2px solid rgba(255, 255, 255, 0.35);
+  border-top-color: white;
+  border-radius: 50%;
+  animation: spin 0.7s linear infinite;
+}
+
+.webcam-modal {
+  position: fixed;
+  inset: 0;
+  z-index: 300;
+  padding: 1rem;
+  display: grid;
+  place-items: center;
+  background: rgba(15, 23, 42, 0.78);
+  backdrop-filter: blur(8px);
+}
+
+.webcam-modal-inner {
+  width: min(100%, 520px);
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  padding: 1rem;
+  display: grid;
+  gap: 0.85rem;
+}
+
+.modal-topline {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  color: var(--muted);
+  font-size: 0.9rem;
+}
+
+.modal-topline strong {
+  color: var(--text);
+}
+
+.webcam-frame {
+  position: relative;
+  overflow: hidden;
+  background: #0f172a;
+  border-radius: var(--radius);
+  aspect-ratio: 4 / 3;
+}
+
+.webcam-video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transform: scaleX(-1);
+}
+
+.face-guide {
+  position: absolute;
+  width: 160px;
+  height: 200px;
+  border: 2px solid rgba(255, 255, 255, 0.78);
+  border-radius: 50%;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -54%);
+  box-shadow: 0 0 0 9999px rgba(15, 23, 42, 0.28);
+}
+
+.webcam-actions {
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  align-items: center;
+}
+
+.btn-capture {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  border: 4px solid #d7dee8;
+  background: white;
+  display: grid;
+  place-items: center;
+}
+
+.btn-capture span {
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  background: var(--primary);
+}
+
+.btn-capture:disabled {
+  opacity: 0.45;
+}
+
+@media (max-width: 640px) {
+  .photo-options {
+    grid-template-columns: 1fr;
+  }
+
+  .photo-preview-row,
+  .footer-actions {
+    grid-template-columns: 1fr;
+  }
+
+  .btn-primary {
+    width: 100%;
+  }
+}
